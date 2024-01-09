@@ -1,0 +1,27 @@
+﻿@page
+@using PVA_zapoctovy_ukol_AIK2_Daniel_Hašek.Models
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-3">Daniel Hašek</h1>
+    <p>AIK2</p>
+    <p class="mb-5">3.1.2024</p>
+    <hr/>
+  <form method="post">
+    <div class="mt-5 d-flex flex-column align-items-center justify-content-center">
+        <div>
+            <label asp-for="Credit.Value" class="control-label">Value (1-5):</label>
+            <input asp-for="Credit.Value" class="mb-3" type="number" min="1" max="5" required />
+            <span asp-validation-for="Credit.Value"></span>
+        </div>
+        <div>
+            <label asp-for="Credit.Success" class="control-label">Success:</label>
+            <input class="mb-3" type="checkbox" asp-for="Credit.Success" />
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+  </form>
+</div>
